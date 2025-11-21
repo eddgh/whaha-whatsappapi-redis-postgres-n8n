@@ -1,0 +1,12 @@
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    platform: linux/amd64
+    environment:
+      POSTGRES_USER: default
+      POSTGRES_PASSWORD: default
+      POSTGRES_DB: default
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
