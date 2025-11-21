@@ -1,3 +1,10 @@
+<p align="center">
+<img 
+    src="./assets/banner.png"
+    width="300"
+/>
+</p>
+
 ## Observação importante
 
 Nesta configuração, utilizamos a imagem `bitnami/postgresql:latest` em vez de `postgres:latest`, 
