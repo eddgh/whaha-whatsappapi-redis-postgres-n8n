@@ -1,0 +1,150 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b2cd02c4-67b6-4371-ae05-046542317560",
+              "name": "mensagem",
+              "value": "={{ $json.mensagem }}",
+              "type": "string"
+            },
+            {
+              "id": "f92cc33a-0196-4d8e-9753-f60b18709a04",
+              "name": "tipo",
+              "value": "={{ $json.tipo }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        288,
+        0
+      ],
+      "id": "4c507135-5042-407b-8e27-d7692a645ff0",
+      "name": "limpeza do json"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        -224,
+        0
+      ],
+      "id": "00aa768d-5907-413d-8dc4-7542cfa8183d",
+      "name": "chat trigger",
+      "webhookId": "7622b90a-8913-419d-a9ca-81bad15314ea"
+    },
+    {
+      "parameters": {
+        "content": "região: etapa de edição do json base",
+        "height": 288,
+        "width": 400,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        0,
+        -96
+      ],
+      "typeVersion": 1,
+      "id": "cd1e099e-1504-4a24-8250-06bc652094ab",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "região: triggers",
+        "height": 288,
+        "width": 208
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -272,
+        -96
+      ],
+      "typeVersion": 1,
+      "id": "f5583992-3eb4-4eae-823a-820864256e6b",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "6679c76b-2015-4c93-a4c9-ccac6ef4aa27",
+              "name": "ação",
+              "value": "={{ $json.action }}",
+              "type": "string"
+            },
+            {
+              "id": "ea2539c3-ad51-4dcd-8a63-20c1df8c6622",
+              "name": "mensagem",
+              "value": "={{ $json.chatInput }}",
+              "type": "string"
+            },
+            {
+              "id": "277f5e31-28b2-4178-b5c5-46b347430c8a",
+              "name": "tipo",
+              "value": "manual",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        0
+      ],
+      "id": "2cc9f014-e491-4384-bc81-ca09845370e8",
+      "name": "adiciona campo \"tipo\""
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "chat trigger": {
+      "main": [
+        [
+          {
+            "node": "adiciona campo \"tipo\"",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "adiciona campo \"tipo\"": {
+      "main": [
+        [
+          {
+            "node": "limpeza do json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f72ead83-21c2-4dcd-9abb-cedc61627995",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "68473d7e8ee32b55af1c35505b57e33d0beff215cbeebeb540d43a0e79687b87"
+  },
+  "id": "f07RWWUL1HLV1Ixe",
+  "tags": []
+}

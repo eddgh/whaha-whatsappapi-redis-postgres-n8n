@@ -1,0 +1,64 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+
+# Environment
+.env
+.env.*.local
+.env.local
+
+# Build / output
+dist/
+build/
+out/
+.tmp/
+*.tsbuildinfo
+
+# Coverage / test
+coverage/
+.nyc_output/
+jest-cache/
+
+# Logs & runtime files
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+*.sock
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+Icon?
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Cache
+.cache/
+.sass-cache/
+.webpack/
+
+# Docker / Compose local overrides
+docker-compose.override.yml
+
+# Misc
+*.local
+*.env
+npm-debug.log*
+yarn.lock?    # Remove this line if you want to keep yarn.lock committed
+
+# n8n / local runtime artifacts
+.n8n/
+uploads/
+local_files/
